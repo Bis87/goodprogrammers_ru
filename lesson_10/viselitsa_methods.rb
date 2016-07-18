@@ -47,6 +47,13 @@ def get_user_input
     letter = STDIN.gets.encode("UTF-8").chomp
   end
 
+  if  (letter == "y"||letter == "u")
+  return "u"
+end
+# if letter == "u"
+#   return "y"
+# end
+
   return letter
 end
 
@@ -64,15 +71,24 @@ def check_input(user_input, letters, good_letters, bad_letters)
   end
 
   # если в слове есть буква
-  if letters.include? user_input
+  if letters.include? user_input ||
+    (user_input == "y"&& letters.include?("u")) ||
+    (user_input == "u"&& letters.include?("y"))
 
     good_letters << user_input # запишем её в число "правильных" буква
+    if user_input == "y"
+      good_letters << "u"
+    end
+
+    if user_input == "u"
+      good_letters << "y"
+    end
 
     # дополнительная проверка - угадано ли на этой букве все слово целиком
     # метод uniq возвращает массив, содержащий уникальные буквы, а sort сортирует их по порядку,
     # и если буквы в обоих массивах одинаковые, то их отсортированные списки совпадут и равенство
     # выполнится
-    if good_letters.uniq.sort == letters.uniq.sort
+    if (letters - good_letters).empty?
       return 1
     else
       return 0
@@ -111,7 +127,7 @@ def print_status(letters, good_letters, bad_letters, errors)
     puts "Вы проиграли :("
   else
     # проверяем результат игры по уже готовым массивам правильных и ошибочных букв
-    if letters.uniq.sort == good_letters.uniq.sort
+    if (letters - good_letters).empty?
       puts "Поздравляем, вы выиграли!\n\n"
     else
       puts "У вас осталось попыток: " + (7 - errors).to_s
