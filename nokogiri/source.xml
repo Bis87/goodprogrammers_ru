@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices>
+    <invoice>
+        <guid>70013</guid> <!---указываем любое значение-->
+        <id>70013</id> <!---указываем любое значение-->
+        <date>2016-08-01 09:01:10</date>
+        <date_modification>2016-08-01 14:15:56</date_modification>
+        <status>active</status>
+        <type>sale</type>
+        <currency>BYN</currency>
+        <total_amount>66.56</total_amount>
+        <total_vat_amount>13.31</total_vat_amount>
+        <total_amount_with_vat>79.87</total_amount_with_vat>
+        <comment>счет прошел</comment>
+        <request>
+            <id>112351</id> <!---указываем из выгрузки счета в 1С-->
+            <name>SO5501</name> <!---указываем из выгрузки счета в 1С-->
+            <date>2016-07-14 10:01:04</date> <!---указываем из выгрузки счета в 1С-->
+        </request>
+        <client>
+            <id>10084641</id>
+            <full_name>1000 ВОЛЬТ</full_name>
+            <tax_number>122222222</tax_number>
+
+        </client>
+        <code>
+            <code> <!---все теги продукта указываем из выгрузки счета в 1С и данных счета-->
+                <code>1</code>
+                <guid>1</guid>
+                <product_type>1</product_type>
+                <service_type>1</service_type>
+                <distr>1</distr>
+                <guid_distr>1</guid_distr>
+                <product_characteristic>1</product_characteristic>
+                <quantity>1</quantity>
+                <amount>1</amount>
+                <discount/>
+                <total_amount>1</total_amount>
+                <vat>1</vat>
+                <vat_amount>1</vat_amount>
+                <total_amount_with_vat>1</total_amount_with_vat>
+                <contract_number>1</contract_number>
+                <contract_date>1</contract_date>
+            </code>
+        </code>
+    </invoice>
+</invoices>
