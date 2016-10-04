@@ -1,4 +1,4 @@
-class ResultPrinter
+class ResultPrinter2
   def print_status(game)
     cls
     puts "\nСлово: "+ get_word_for_print(game.letters, game.good_letters)
