@@ -20,8 +20,9 @@ class Game3
     letter = ""
     while letter == "" do
       letter = STDIN.gets.encode("UTF-8").chomp
+      letter_dc =  UnicodeUtils.downcase(letter)
     end
-    next_step(letter)
+    next_step(letter_dc)
   end
 
   def next_step(bukva)

@@ -11,6 +11,8 @@ slovo = reader.read_from_file("#{current_path}/../data/words.txt")
 
 game = Game3.new(slovo)
 
+puts slovo
+
 while game.status == 0 do
   printer.print_status(game)
   game.ask_next_letter
